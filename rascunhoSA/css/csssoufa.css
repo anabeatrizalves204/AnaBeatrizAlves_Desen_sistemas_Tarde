@@ -1,0 +1,123 @@
+
+/*Configuração geral do corpo da página*/
+/*O "body" é chamado de seletor*/
+body {
+margin: 0 auto;
+font-family: "Century Gothic", sans-serif;
+background-color: #EBD0A4;
+-webkit-animation: scale-up-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+animation: scale-up-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/*Anotação: pro float funcionar bonitinho,todos os elementos de uma linha tem que ter float*/
+/*Configurações gerais*/
+/*Cabeçalho*/
+header {
+height: 170px;
+background-color: #8D0606;
+}
+
+header img {
+float: right;
+height: 150px;
+width: 150px;
+margin: 10px;
+}
+
+header h1 {
+float: left;
+margin: 50px 0 0 30px;
+font-size: 50px;
+color: #EBD0A4;
+}
+
+/*Menu*/
+/*Anotação: o clear é usado para não entrar em conflito com os floats anteriores*/
+nav {
+clear: both;
+width: 80%;
+margin: 0px auto;
+height: 55px;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+text-align: center;
+}
+
+h2 {
+float: left;
+background-color: #8B0000;
+color:antiquewhite;
+text-align: center;
+padding: 150px 0;
+margin: 30%;
+border-radius: 30px 30px 30px 30px;
+margin-top: 0;
+margin-bottom: 0;
+font-size: 35px;
+}
+
+
+/*Área geral para conteúdos específicos de cada página*/
+section {
+clear: both;
+min-height: 550px;
+width: 100%;
+margin-top: 50px;
+}
+
+/*Rodapé*/
+footer {
+background-color: #8B0000;
+color: #fff;
+text-align: center;
+padding: 10px;
+
+}
+
+/*Configurações página inicial*/
+section #topo {
+width: 900px;
+margin: 80px auto;
+height: 250px;
+background-color: white;
+}
+
+.geladeira {
+height: 250px;
+width: 125px;
+          }
+
+.direita {
+float: right;
+        }
+
+.esquerda {
+float: left;
+         }
+
+section #titulos {
+float: left;
+height: 250px;
+width: 650px;
+margin: 0px auto;
+                }
+
+
+
+h3 {
+text-align: center;
+margin-top: 50px;
+font-size: 20px;
+  }
+
+section p {
+clear: both;
+text-align: center;
+margin: 10px 80px;
+         }
+
+
+        
