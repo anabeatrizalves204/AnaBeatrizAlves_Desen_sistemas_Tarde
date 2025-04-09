@@ -27,8 +27,7 @@ fieldset{
     margin-right: auto;
     width: 48%;
     height: 100%;
-    background-color: b2bec3;
-    border-radius: 10px;
+    background-color: #b2bec3;
 }
 
 .estados{
@@ -44,6 +43,7 @@ button{
 .tamanho{
     width: 130%;
 }
+
 .tamanho2{
     width: 56%;
 }
@@ -58,9 +58,9 @@ button{
     height: 100%;
 }
 
-.btn1, btn2{
-    background-color: rgb 37,37,37;
+.btn1, .btn2{
+    background-color: rgb(37,37,37);
     color: white;
-    height: 30px;
+    height: 35px;
     margin-top: 34%;
 }
