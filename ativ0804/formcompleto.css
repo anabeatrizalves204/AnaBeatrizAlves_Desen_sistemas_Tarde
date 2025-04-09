@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(151, 127, 127);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+table{
+    border: 2px solid;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+
+fieldset{
+    border: 2px solid;
+    border-collapse: collapse ;
+    border-radius: 20px;
+}
+
+td{
+    border: 2px solid;
+    border-collapse: collapse;
+    border-radius: 20px
+}
+
+input{
+    border: 2px solid;
+    border-collapse: collapse;
+    border-radius: 20px
+}
+
+#topo{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 70px;
+}
+
+.botao{
+    background-color: black;
+    color: white;
+}
+
+label{
+    background-color: white;
+}
