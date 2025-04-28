@@ -1,20 +1,36 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title> Let's Rock Disco Store </title>
 <link rel="stylesheet" type="text/css" href="css/csssoufa.css"/>
+<script src="js/script.js"></script>
 </head>
+
 <body >          
-<header>
-<img src="imagens/letsrock.png" alt="Logo da página" title="Logo da página">
-<h1> Cadastre-se e Divirta-se </h1>
-</header>
-<!--A tag "nav" cria uma área para navegação como menus e outros-->
-<section>
-<h2> Cadastro <br> Seu nome: <br> Nascimento: <br> E-mail: <br> Número de Telefone: </h2>
-</section>
+   <header>
+    <img src="imagens/letsrock.png" alt="Logo da página" title="Logo da página">
+    <h1> Cadastre-se e Divirta-se </h1>
+   </header>
+   <section>
+    <h2>Cadastro</h2>
+    <form onsubmit="return validarFormulario();">
+      <label for="nome">Seu nome:</label><br>
+      <input type="text" id="nome" name="nome"><br><br>
+
+      <label for="nascimento">Nascimento:</label><br>
+      <input type="date" id="nascimento" name="nascimento"><br><br>
+
+      <label for="email">E-mail:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="telefone">Número de Telefone:</label><br>
+      <input type="text" id="telefone" name="telefone"><br><br>
+
+      <input type="submit" value="Cadastrar">
+    </form>
+  </section>
 <br>
 <br>
 <br>

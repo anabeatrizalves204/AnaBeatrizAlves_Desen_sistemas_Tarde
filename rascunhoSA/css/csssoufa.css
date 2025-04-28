@@ -1,122 +1,84 @@
-
-/*Configuração geral do corpo da página*/
-/*O "body" é chamado de seletor*/
-body {
-margin: 0 auto;
-font-family: "Century Gothic", sans-serif;
-background-color: #EBD0A4;
--webkit-animation: scale-up-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-animation: scale-up-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Anotação: pro float funcionar bonitinho,todos os elementos de uma linha tem que ter float*/
-/*Configurações gerais*/
-/*Cabeçalho*/
+body {
+  background-color: #EBD0A4;
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
 header {
-height: 170px;
-background-color: #8D0606;
+  background-color:#8B0000;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 5px;
 }
 
 header img {
-float: right;
-height: 150px;
-width: 150px;
-margin: 10px;
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 header h1 {
-float: left;
-margin: 50px 0 0 30px;
-font-size: 50px;
-color: #EBD0A4;
+  font-size: 2em;
+  color: #EBD0A4;
 }
 
-/*Menu*/
-/*Anotação: o clear é usado para não entrar em conflito com os floats anteriores*/
-nav {
-clear: both;
-width: 80%;
-margin: 0px auto;
-height: 55px;
-}
-
-nav a {
-color: white;
-text-decoration: none;
-text-align: center;
-}
-
-h2 {
-float: left;
-background-color: #8B0000;
-color:antiquewhite;
-text-align: center;
-padding: 150px 0;
-margin: 30%;
-border-radius: 30px 30px 30px 30px;
-margin-top: 0;
-margin-bottom: 0;
-font-size: 35px;
-}
-
-
-/*Área geral para conteúdos específicos de cada página*/
+/* Seção de Cadastro */
 section {
-clear: both;
-min-height: 550px;
-width: 100%;
-margin-top: 50px;
+  background-color: #8B0000;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+section h2 {
+  font-size: 1.2em;
+  color: #EBD0A4;
+  line-height: 2;
 }
 
 /*Rodapé*/
 footer {
-background-color: #8B0000;
-color: #fff;
-text-align: center;
-padding: 10px;
-
+  background-color: #8B0000;
+  color: #EBD0A4;
+  text-align: center;
+  margin-top: auto; 
+  padding: 20px;
+  font-size: 0.9em;
+  border-top: 1px;
 }
 
-/*Configurações página inicial*/
-section #topo {
-width: 900px;
-margin: 80px auto;
-height: 250px;
-background-color: white;
-}
+      
 
-.geladeira {
-height: 250px;
-width: 125px;
-          }
-
-.direita {
-float: right;
-        }
-
-.esquerda {
-float: left;
-         }
-
-section #titulos {
-float: left;
-height: 250px;
-width: 650px;
-margin: 0px auto;
-                }
-
-
-
-h3 {
-text-align: center;
-margin-top: 50px;
-font-size: 20px;
+/* Responsividade */
+@media (max-width: 600px) {
+  header h1 {
+      font-size: 1.5em;
   }
 
-section p {
-clear: both;
-text-align: center;
-margin: 10px 80px;
+  section {
+      padding: 15px;
+  }
+
+  section h2 {
+      font-size: 1em;
+  }
          }
 
 
