@@ -22,7 +22,7 @@
             echo "<tr>";
             for ($c=1; $c<=10;$c++)
             {
-                echo "<td> $l x $c </td>";
+                echo "<td> $l x $c = </td>";
             }
             echo "<tr/>";
         }
