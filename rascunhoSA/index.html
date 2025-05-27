@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Configurações</title>
+  <link rel="stylesheet" type="text/css" href="css/csssoufa.css"/>
+</head>
+<body>
+
+  <header>Configurações da Conta</header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#dados-pessoais" class="active">Dados Pessoais</a></li>
+        <li><a href="#endereco">Endereço</a></li>
+        <li><a href="#seguranca">Segurança</a></li>
+        <li><a href="#notificacoes">Notificações</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <section id="dados-pessoais">
+        <h2>Dados Pessoais</h2>
+        <form>
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" />
+
+          <button type="submit">Salvar</button>
+        </form>
+      </section>
+
+      <section id="endereco" style="margin-top: 40px;">
+        <h2>Endereço</h2>
+        <form>
+          <label for="rua">Rua</label>
+          <input type="text" id="rua" name="rua" placeholder="Rua Exemplo, 123" />
+
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" placeholder="Cidade" />
+
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado">
+            <option value="">Selecione</option>
+            <option>Acre</option>
+            <option>Alagoas</option>
+            <option>Amapá</option>
+            <option>Amazonas</option>
+            <option>Bahia</option>
+            <option>Ceará</option>
+            <option>Distrito Federal</option>
+            <option>Espírito Santo</option>
+            <option>Goiás</option>
+            <option>Maranhão</option>
+            <option>Mato Grosso</option>
+            <option>Mato Grosso do Sul</option>
+            <option>Minas Gerais</option>
+            <option>Pará</option>
+            <option>Paraíba</option>
+            <option>Paraná</option>
+            <option>Pernambuco</option>
+            <option>Piauí</option>
+            <option>Rio de Janeiro</option>
+            <option>Rio Grande do Norte</option>
+            <option>Rio Grande do Sul</option>
+            <option>Rondônia</option>
+            <option>Roraima</option>
+            <option>Santa Catarina</option>
+            <option>São Paulo</option>
+            <option>Sergipe</option>
+            <option>Tocantins</option>
+
+
+          </select>
+
+          <button type="submit">Salvar</button>
+        </form>
+      </section>
+
+      <section id="seguranca" style="margin-top: 40px;">
+        <h2>Segurança</h2>
+        <form>
+          <label for="senha-antiga">Senha atual</label>
+          <input type="password" id="senha-antiga" name="senha-antiga" />
+
+          <label for="senha-nova">Nova senha</label>
+          <input type="password" id="senha-nova" name="senha-nova" />
+
+          <label for="senha-confirma">Confirmar nova senha</label>
+          <input type="password" id="senha-confirma" name="senha-confirma" />
+
+          <button type="submit">Atualizar senha</button>
+        </form>
+      </section>
+
+      <section id="notificacoes" style="margin-top: 40px;">
+        <h2>Notificações</h2>
+        <form>
+          <label>
+            <input type="checkbox" name="email-promo" /> Receber promoções por email
+          </label><br />
+          <label>
+            <input type="checkbox" name="sms-alerta" /> Receber alertas por SMS
+          </label><br />
+          <label>
+            <input type="checkbox" name="news" /> Receber novidades e notícias
+          </label><br />
+
+          <button type="submit" style="margin-top: 15px;">Salvar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Script simples para destacar link ativo no menu
+    const links = document.querySelectorAll('nav.sidebar a');
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        links.forEach(l => l.classList.remove('active'));
+        e.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
