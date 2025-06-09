@@ -70,3 +70,4 @@ setInterval(createParticle, 3000);
 for(let i = 0; i < 5; i++) {
     setTimeout(createParticle, i * 1000);
 }
+

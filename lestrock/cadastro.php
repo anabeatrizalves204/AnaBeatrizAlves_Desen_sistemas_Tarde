@@ -1,4 +1,7 @@
 <?php
+session_start();
+require_once 'conexao.php';
+
 $mensagem = '';
 $erro = '';
 
@@ -7,14 +10,68 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if($_SERVER["REQUEST_METHOD"] == "POST"){
     $nome = trim($_POST['nome']);
+    $nascimento = trim($_POST['nascimento']);
     $email = trim($_POST['email']);
+    $telefone = trim($_POST['telefone']);
+    $senha = $_POST['senha'];
     
-    if (empty($nome) || empty($email)) {
-        $erro = 'Nome e email são obrigatórios!';
+    // Validações básicas
+    if (empty($nome) || empty($email) || empty($nascimento) || empty($telefone) || empty($senha)) {
+        $erro = 'Todos os campos são obrigatórios!';
     } else {
-        $mensagem = 'Dados recebidos: ' . $nome . ' - ' . $email;
+        // Validar formato da data de nascimento
+        if (!preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $nascimento)) {
+            $erro = 'Data de nascimento deve estar no formato DD/MM/AAAA!';
+        } else {
+            // Converter data de DD/MM/AAAA para YYYY-MM-DD (formato MySQL)
+            $data_parts = explode('/', $nascimento);
+            $nascimento_mysql = $data_parts[2] . '-' . $data_parts[1] . '-' . $data_parts[0];
+            
+            // Verificar se a data é válida
+            if (!checkdate($data_parts[1], $data_parts[0], $data_parts[2])) {
+                $erro = 'Data de nascimento inválida!';
+            } else {
+                // Hash da senha
+                $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+                
+                try {
+                    // Verificar se email já existe
+                    $sql_check = "SELECT id FROM usuarios WHERE email = :email";
+                    $stmt_check = $pdo->prepare($sql_check);
+                    $stmt_check->bindParam(':email', $email);
+                    $stmt_check->execute();
+                    
+                    if ($stmt_check->rowCount() > 0) {
+                        $erro = 'Este email já está cadastrado!';
+                    } else {
+                        // Inserir no banco de dados
+                        $sql = "INSERT INTO usuarios(nome, nascimento, email, telefone, senha_hash) VALUES(:nome, :nascimento, :email, :telefone, :senha_hash)";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->bindParam(':nome', $nome);
+                        $stmt->bindParam(':nascimento', $nascimento_mysql);
+                        $stmt->bindParam(':email', $email);
+                        $stmt->bindParam(':telefone', $telefone);
+                        $stmt->bindParam(':senha_hash', $senha_hash);
+
+                        if($stmt->execute()){
+                            $mensagem = 'Usuário cadastrado com sucesso!';
+                            // Limpar variáveis após sucesso
+                            $nome = $nascimento = $email = $telefone = '';
+                        } else {
+                            $erro = 'Erro ao cadastrar usuário. Tente novamente.';
+                        }
+                    }
+                } catch(PDOException $e) {
+                    if ($e->getCode() == 23000) { // Código de erro para duplicate entry
+                        $erro = 'Este email já está cadastrado!';
+                    } else {
+                        $erro = 'Erro no banco de dados: ' . $e->getMessage();
+                    }
+                }
+            }
+        }
     }
 }
 ?>
@@ -74,6 +131,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="form-group">
                     <input type="tel" name="telefone" class="form-input" placeholder="Número de Telefone" 
                            value="<?php echo isset($telefone) ? htmlspecialchars($telefone) : ''; ?>" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="senha" class="form-input" placeholder="Senha" required>
                 </div>
                 <button type="submit" class="submit-btn">CADASTRAR</button>
             </form>

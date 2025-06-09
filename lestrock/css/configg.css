@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e5b87e;
+    padding: 30px;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: auto;
+    background-color: #ebd0a4;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(156, 31, 31, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #8d0606;
+    margin-bottom: 25px;
+  }
+  
+  .config-section {
+    margin-bottom: 30px;
+  }
+  
+  .config-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #8d0606;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  input,
+  select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #8d0606;
+    outline: none;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    background-color: #8d0606;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #d11f1f;
+  }
+  
+  button.cancelar {
+    background-color: #888;
+  }
+  
+  button.cancelar:hover {
+    background-color: #b3b1b1;
+  }
